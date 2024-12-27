@@ -1,0 +1,48 @@
+.textfield-design{
+    -fx-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-size: 37px;
+}
+
+.button-design {
+    -fx-background-color: linear-gradient(to bottom, #6a11cb, #2575fc);
+
+    -fx-font-size: 14px;
+}
+
+.button-design:hover {
+    -fx-background-color: linear-gradient(to bottom, #2575fc, #6a11cb);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+
+.list-view-custom {
+    -fx-background-color: transparent;
+    -fx-border-color: #243B55;
+    -fx-border-width: 2;
+    -fx-padding: 10;
+    -fx-control-inner-background: linear-gradient(to bottom right, #141E30, #243B55);
+    -fx-control-inner-background-alt: linear-gradient(to bottom right, #243B55, #141E30);
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
+
+.list-view-custom .list-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.list-view-custom .list-cell:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: #00ffcc;
+
+}
+
+.list-view-custom .list-cell:focused {
+    -fx-background-color: #00ffcc;
+    -fx-text-fill: #141E30;
+}
+

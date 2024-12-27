@@ -1,0 +1,42 @@
+.textfield-design{
+    -fx-border-color: #509dea;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.button-design{
+    -fx-background-color: #509dea;
+    -fx-background-radius: 40px;
+    -fx-text-fill: white;
+}
+
+.button-design:hover{
+    -fx-background-color: #0082fc;
+}
+
+.check-box {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5;
+    -fx-cursor: hand; /* تغيير المؤشر عند التمرير */
+}
+
+/* تأثير عند التمرير بالماوس */
+.check-box:hover {
+    -fx-text-fill: #00bfff; /* لون النص عند التمرير */
+    -fx-background-color: rgba(255, 255, 255, 0.1); /* خلفية خفيفة عند التمرير */
+}
+
+/* تأثير عند الضغط على العنصر */
+.check-box:pressed {
+    -fx-text-fill: #1e90ff; /* لون النص عند الضغط */
+    -fx-background-color: rgba(0, 0, 0, 0.3); /* خلفية عند الضغط */
+}
+
+/* تأثير عند اختيار العنصر */
+.check-box:selected {
+    -fx-text-fill: #32cd32; /* لون النص عندما يكون محدد */
+    -fx-background-color: rgba(50, 205, 50, 0.2); /* خلفية عندما يكون محدد */
+    -fx-border-color: #32cd32; /* لون الإطار عندما يكون محدد */
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}

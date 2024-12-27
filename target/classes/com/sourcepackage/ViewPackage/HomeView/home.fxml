@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sourcepackage.ViewPackage.HomeView.HomeController">
+   <Pane prefHeight="600.0" prefWidth="1000.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <!-- Sidebar -->
+      <AnchorPane prefHeight="600.0" prefWidth="269.0" style="-fx-background-color: linear-gradient(to bottom left, #141E30, #243B55);">
+         <children>
+            <Label fx:id="Linke" layoutX="86.0" layoutY="371.0" onMouseEntered="#setOnMouseEntered" onMouseExited="#setOnMouseExited" prefHeight="109.0" prefWidth="106.0" style="-fx-text-fill: #141E39;" text="M" textFill="RED">
+               <font>
+                  <Font size="100" url="@../../imagePackage/batm.ttf" />
+               </font>
+            </Label>
+            <ImageView fitHeight="121.0" fitWidth="119.0" layoutX="75.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagePackage/user.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="SignOut" layoutX="96.0" layoutY="543.0" mnemonicParsing="false" onAction="#signOut" prefHeight="35.0" prefWidth="75.0" style="-fx-text-fill: #fff;" styleClass="button-design" text="Sign out" />
+            <Label layoutX="92.0" layoutY="205.0" prefHeight="52.0" prefWidth="83.0" style="-fx-font-family: 'Arial'; -fx-font-size: 36; -fx-text-fill: #fff;" stylesheets="@style.css" text="Hello" textFill="#fff">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="userNameLabel" layoutX="-1.0" layoutY="274.0" prefHeight="53.0" prefWidth="269.0" styleClass="textfield-design" stylesheets="@style.css" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <!-- Top Bar -->
+      <AnchorPane layoutX="269.0" layoutY="0.0" prefHeight="157.0" prefWidth="731.0" style="-fx-background-color: linear-gradient(to top left, #0F3D3E, #1B263B);">
+         <children>
+            <HBox alignment="CENTER" layoutX="50.0" layoutY="21.0" prefHeight="119.0" prefWidth="630.0" spacing="50">
+               <children>
+                  <Button fx:id="addNode" mnemonicParsing="false" onAction="#addNode" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-text-fill: #fff;" styleClass="button-design" stylesheets="@style.css" text="Add Node">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="deleteNode" mnemonicParsing="false" onAction="#deleteNode" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-text-fill: #fff;" styleClass="button-design" stylesheets="@style.css" text="Delete Node">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="openNode" mnemonicParsing="false" onAction="#openNode" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-text-fill: #fff;" styleClass="button-design" stylesheets="@style.css" text="Open Node">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ImageView fx:id="exitImage" fitHeight="26.0" fitWidth="26.0" layoutX="690.0" layoutY="10.0" onDragDetected="#exit" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagePackage/exit.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+
+      <!-- Notes List -->
+      <AnchorPane layoutX="269.0" layoutY="157.0" prefHeight="443.0" prefWidth="731.0">
+         <children>
+            <ListView fx:id="notesListView" layoutX="10.0" layoutY="10.0" prefHeight="423.0" prefWidth="711.0" style="-fx-background-color: linear-gradient(to top left, #0F3D3E, #1B263B);" styleClass="list-view-custom" stylesheets="@style.css" />
+         </children>
+      </AnchorPane>
+   </Pane>
+</AnchorPane>
