@@ -1,0 +1,82 @@
+/* Main Styles */
+.root {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Tool Button Styles */
+.tool-button {
+    -fx-background-color: linear-gradient(to bottom, #6a11cb, #2575fc);
+    -fx-background-radius: 50%;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+}
+
+.tool-button:hover {
+    -fx-background-color: rgba(80, 157, 234, 0.3);
+}
+
+.tool-button:selected {
+    -fx-background-color: #509dea;
+}
+
+
+.button-design {
+    -fx-background-color: linear-gradient(to bottom, #6a11cb, #2575fc);
+
+    -fx-font-size: 14px;
+    -fx-background-radius: 50;
+    -fx-text-fill: #fff;
+}
+
+.button-design:hover {
+    -fx-background-color: linear-gradient(to bottom, #2575fc, #6a11cb);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+
+
+/* Canvas Container */
+.canvas-container {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+/* Image Gallery */
+.image-gallery {
+    -fx-background-color: white;
+    -fx-padding: 10;
+}
+
+.image-container {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 0);
+    -fx-padding: 5;
+}
+
+/* Audio List */
+.list-view {
+    -fx-background-color: transparent;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+}
+
+.list-cell:hover {
+    -fx-background-color: rgba(80, 157, 234, 0.1);
+}
+
+/* HTML Editor Customization */
+.html-editor {
+    -fx-font: 14px "Segoe UI";
+    -fx-border-color: transparent;
+}
+
+.html-editor .top-toolbar {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: transparent;
+}

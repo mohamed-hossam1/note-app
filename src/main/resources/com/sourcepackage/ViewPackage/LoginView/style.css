@@ -1,0 +1,15 @@
+.textfield-design{
+    -fx-border-color: #509dea;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.button-design{
+    -fx-background-color: #509dea;
+    -fx-background-radius: 40px;
+    -fx-text-fill: white;
+}
+
+.button-design:hover{
+    -fx-background-color: #0082fc;
+}
+

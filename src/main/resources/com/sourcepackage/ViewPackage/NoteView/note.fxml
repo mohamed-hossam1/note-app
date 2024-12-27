@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sourcepackage.ViewPackage.NoteView.NoteController">
+
+    <Pane prefHeight="800.0" prefWidth="912.0" style="-fx-background-color: linear-gradient(to bottom left, #141E30, #243B55);" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <!-- Top Bar -->
+            <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="157.0" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to top left, #0F3D3E, #1B263B);">
+                <children>
+                    <!-- View Buttons -->
+                    <HBox alignment="CENTER" layoutX="187.0" layoutY="19.0" prefHeight="119.0" prefWidth="627.0" spacing="50">
+                        <children>
+                            <Button fx:id="textView" mnemonicParsing="false" onAction="#showTextEditor" prefHeight="100.0" prefWidth="100.0" styleClass="button-design" stylesheets="@style.css" text="Text View">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="imageView" mnemonicParsing="false" onAction="#showImageGallery" prefHeight="100.0" prefWidth="100.0" styleClass="button-design" stylesheets="@style.css" text="Image View">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="drawView" mnemonicParsing="false" onAction="#showDrawingCanvas" prefHeight="100.0" prefWidth="100.0" styleClass="button-design" text="Draw View">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                        <stylesheets>
+                           <URL value="@../HomeView/style.css" />
+                           <URL value="@style.css" />
+                        </stylesheets>
+                            </Button>
+                            <Button fx:id="audioView" mnemonicParsing="false" onAction="#showAudioRecorder" prefHeight="100.0" prefWidth="100.0" styleClass="button-design" text="Audio View">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                        <stylesheets>
+                           <URL value="@../HomeView/style.css" />
+                           <URL value="@style.css" />
+                        </stylesheets>
+                            </Button>
+                        </children>
+                    </HBox>
+
+                    <!-- Control Buttons -->
+                    <HBox alignment="CENTER_RIGHT" layoutX="870.0" layoutY="14.0" spacing="10">
+                        <ToggleButton fx:id="editModeToggle" stylesheets="@style.css" text="Edit Mode">
+                     <styleClass>
+                        <String fx:value="mode-toggle-button" />
+                        <String fx:value="button-design" />
+                     </styleClass></ToggleButton>
+                        <ImageView fx:id="exitImage" fitHeight="26.0" fitWidth="26.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../imagePackage/exit.png" />
+                            </image>
+                        </ImageView>
+                    </HBox>
+
+                    <Label fx:id="noteTitle" layoutY="124.0" prefHeight="29.0" prefWidth="163.0" style="-fx-text-fill: white; -fx-font-size: 20px;" />
+                </children>
+            </AnchorPane>
+        </children>
+    </Pane>
+
+    <ImageView fx:id="backButton" fitHeight="55.0" fitWidth="52.0" onMouseClicked="#handleBack" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../../imagePackage/back.png" />
+        </image>
+    </ImageView>
+
+    <!-- Content Area -->
+    <StackPane layoutY="155.0" prefHeight="445.0" prefWidth="1000.0">
+        <children>
+            <!-- Text Editor View -->
+            <VBox fx:id="textEditorContainer" visible="true">
+                <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 5;">
+                </HBox>
+                <HTMLEditor fx:id="htmlEditor" prefHeight="445.0" prefWidth="1000.0" styleClass="html-editor" VBox.vgrow="ALWAYS" />
+            </VBox>
+
+            <!-- Drawing View -->
+            <VBox fx:id="drawingContainer" visible="false">
+                <HBox alignment="CENTER" spacing="10" style="-fx-padding: 5; -fx-background-color: #1B263B;">
+                    <ColorPicker fx:id="colorPicker" />
+                    <Slider fx:id="brushSize" max="20" min="1" prefWidth="200" value="5" />
+                    <Button onAction="#clearCanvas" styleClass="tool-button" text="Clear" />
+                </HBox>
+                <Canvas fx:id="drawingCanvas" height="400" width="1000" />
+            </VBox>
+
+            <!-- Image Gallery View -->
+            <VBox fx:id="imageContainer" visible="false">
+                <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 5;">
+                    <Button onAction="#handleAddImage" styleClass="content-button" text="Add Image" />
+                </HBox>
+                <ScrollPane styleClass="custom-scroll-pane" VBox.vgrow="ALWAYS">
+                    <FlowPane fx:id="imageGallery" hgap="10" prefWidth="980" styleClass="image-gallery" vgap="10" />
+                </ScrollPane>
+            </VBox>
+
+            <!-- Audio Recorder View -->
+            <VBox fx:id="audioContainer" alignment="CENTER" spacing="10" visible="false">
+                <HBox alignment="CENTER" spacing="10" style="-fx-padding: 5;">
+                    <Button fx:id="recordButton" styleClass="record-button" text="Start Recording" />
+                </HBox>
+                <ListView fx:id="audioList" prefHeight="380" styleClass="custom-list-view" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </children>
+    </StackPane>
+</AnchorPane>
