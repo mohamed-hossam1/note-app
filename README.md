@@ -21,6 +21,9 @@ Note App is a simple desktop application built with JavaFX, Java, and CSS. It us
 3. Open the project in your IDE and configure JavaFX.
 4. Run the main class.
 
+## Video Demo
+Watch a detailed walkthrough of the project here: [Project Demo](https://www.youtube.com/watch?v=W-R0GDwiE_Y)
+
 ## Contact
-For questions or feedback, contact Mohamed Hossam at [GitHub](https://github.com/mohamed-hossam1).
+For questions or feedback, contact Mohamed Hossam at [linkedin](https://www.linkedin.com/in/mohamed-hossam-cp/).
 
